@@ -1,4 +1,4 @@
-FROM wkoch/yarn
+FROM yarn
 
 RUN apt-get update &&\
     curl -sSL \

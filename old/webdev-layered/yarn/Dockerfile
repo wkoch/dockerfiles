@@ -1,4 +1,4 @@
-FROM wkoch/node
+FROM node
 
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - &&\
     echo "deb https://dl.yarnpkg.com/debian/ stable main" \
