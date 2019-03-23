@@ -12,6 +12,7 @@ RUN echo "Updating system." &&\
     groupadd --gid 1000 wkoch &&\
     useradd --uid 1000 --gid wkoch \
     --shell /bin/bash -p '*' --create-home wkoch &&\
+    npm update -g &&\
     echo "Cleaning up." &&\
     rm -rf /var/lib/apt/lists/* &&\
     rm -rf /tmp/*
