@@ -14,6 +14,5 @@ RUN apt-get update && \
 
 # versions of local tools
 RUN node -v
-# NPM version should already be pretty new (> 6.4.0)
 RUN npm -v
 RUN yarn -v

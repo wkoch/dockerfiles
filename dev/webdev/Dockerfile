@@ -18,7 +18,7 @@ RUN echo "Updating system." &&\
 
 # NodeJS
 RUN echo "Installing NodeJS." &&\
-    curl -sL https://deb.nodesource.com/setup_9.x | bash - &&\
+    curl -sL https://deb.nodesource.com/setup_11.x | bash - &&\
     apt-get update -qqy &&\
     apt-get install -qqy nodejs &&\
     echo "Cleaning up." &&\
@@ -72,5 +72,11 @@ RUN wget -O vscode-amd64.deb  https://go.microsoft.com/fwlink/?LinkID=760868 &&\
 #    echo "Cleaning up." &&\
 #        rm -rf /var/lib/apt/lists/* &&\
 #        rm -rf /tmp/*
+
+# versions of local tools
+RUN node -v
+RUN npm -v
+RUN yarn -v
+RUN code -v
 
 CMD ["code, "--verbose"]
