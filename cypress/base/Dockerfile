@@ -1,7 +1,7 @@
 FROM node:latest
 
 RUN apt-get update && \
-  apt-get upgrade && \
+  apt-get upgrade -qqy && \
   apt-get install -y \
   libgtk2.0-0 \
   libnotify-dev \
