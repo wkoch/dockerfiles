@@ -4,54 +4,54 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # Base System
 RUN echo "Updating system." &&\
-        apt-get update -qqy &&\
-        apt-get upgrade -qqy &&\
+    apt-get update -qqy &&\
+    apt-get upgrade -qqy &&\
     echo "Installing tools." &&\
-        apt-get install -qqy git gnupg curl wget &&\
+    apt-get install -qqy git gnupg curl wget &&\
     echo "Creating user." &&\
-        groupadd --gid 1000 wkoch &&\
-        useradd --uid 1000 --gid wkoch \
-        --shell /bin/bash -p '*' --create-home wkoch &&\
+    groupadd --gid 1000 wkoch &&\
+    useradd --uid 1000 --gid wkoch \
+    --shell /bin/bash -p '*' --create-home wkoch &&\
     echo "Cleaning up." &&\
-        rm -rf /var/lib/apt/lists/* &&\
-        rm -rf /tmp/*
+    rm -rf /var/lib/apt/lists/* &&\
+    rm -rf /tmp/*
 
 # NodeJS
 RUN echo "Installing NodeJS." &&\
-        curl -sL https://deb.nodesource.com/setup_9.x | bash - &&\
-        apt-get update -qqy &&\
-        apt-get install -qqy nodejs &&\
+    curl -sL https://deb.nodesource.com/setup_9.x | bash - &&\
+    apt-get update -qqy &&\
+    apt-get install -qqy nodejs &&\
     echo "Cleaning up." &&\
-        rm -rf /var/lib/apt/lists/* &&\
-        rm -rf /tmp/*
+    rm -rf /var/lib/apt/lists/* &&\
+    rm -rf /tmp/*
 
 # Yarn
 RUN echo "Installing Yarn." &&\
-        curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - &&\
-        echo "deb https://dl.yarnpkg.com/debian/ stable main" \
-            > /etc/apt/sources.list.d/yarn.list && \
-        apt-get update -qqy &&\
-        apt-get install -qqy yarn &&\
+    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - &&\
+    echo "deb https://dl.yarnpkg.com/debian/ stable main" \
+    > /etc/apt/sources.list.d/yarn.list && \
+    apt-get update -qqy &&\
+    apt-get install -qqy yarn &&\
     echo "Cleaning up." &&\
-        rm -rf /var/lib/apt/lists/* &&\
-        rm -rf /tmp/*
+    rm -rf /var/lib/apt/lists/* &&\
+    rm -rf /tmp/*
 
 # Visual Studio Code
 RUN wget -O vscode-amd64.deb  https://go.microsoft.com/fwlink/?LinkID=760868 &&\
     apt-get update -qqy &&\
     apt-get install -qqy \
-        libasound2 libatk1.0-0 libcairo2 libcanberra-gtk-module \
-        libcups2 libexpat1 libfontconfig1 libfreetype6 libgconf-2-4 \
-        libgtk2.0-0 libnotify4 libnss3 libpango-1.0-0 libsecret-1-0 \
-        libx11-xcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 \
-        libxfixes3 libxi6 libxkbfile1 libxrandr2 libxrender1 libxss1 \
-        libxtst6  &&\
+    libasound2 libatk1.0-0 libcairo2 libcanberra-gtk-module \
+    libcups2 libexpat1 libfontconfig1 libfreetype6 libgconf-2-4 \
+    libgtk2.0-0 libnotify4 libnss3 libpango-1.0-0 libsecret-1-0 \
+    libx11-xcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 \
+    libxfixes3 libxi6 libxkbfile1 libxrandr2 libxrender1 libxss1 \
+    libxtst6  &&\
     dpkg -i vscode-amd64.deb &&\
     apt-get install -qqyf &&\
     echo "Cleaning up." &&\
-        rm vscode-amd64.deb &&\
-        rm -rf /var/lib/apt/lists/* &&\
-        rm -rf /tmp/*
+    rm vscode-amd64.deb &&\
+    rm -rf /var/lib/apt/lists/* &&\
+    rm -rf /tmp/*
 
 # Visual Studio Code
 # RUN echo "Installing VS Code." &&\
