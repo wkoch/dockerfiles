@@ -10,7 +10,7 @@ RUN apt-get update && \
   libxss1 \
   libasound2 \
   xvfb && \
-  npm update -g npm
+  npm install -g npm
 
 # versions of local tools
 RUN node -v
