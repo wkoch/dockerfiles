@@ -67,6 +67,5 @@ RUN wget -O vscode-amd64.deb  https://go.microsoft.com/fwlink/?LinkID=760868 &&\
 # versions of local tools
 RUN node -v
 RUN npm -v
-RUN code -v
 
 CMD ["code, "--verbose"]
