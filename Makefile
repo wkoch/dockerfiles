@@ -1,4 +1,4 @@
-# Alpine based toolkit (Git, Node, Yarn, without NPM)
+# Alpine based toolkit (Git, Node, NPM)
 # Debian Stretch-slim based imaged with VS Code and the whole stack.
 
 toolkit:

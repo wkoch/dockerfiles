@@ -30,20 +30,7 @@ RUN DEBIAN_FRONTEND=noninteractive LC_ALL=C LANG=pt_BR.UTF-8 LANGUAGE=pt_BR:pt:e
     curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-$ARCH.tar.xz" &&\
     tar -xJf "node-v$NODE_VERSION-linux-$ARCH.tar.xz" -C /usr/local --strip-components=1 --no-same-owner &&\
     rm "node-v$NODE_VERSION-linux-$ARCH.tar.xz" &&\
-    ln -s /usr/local/bin/node /usr/local/bin/nodejs &&\
-    \
-    YARN_VERSION='1.3.2' &&\
-    curl -fSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz" &&\
-    mkdir -p /opt/yarn &&\
-    tar -xzf yarn-v$YARN_VERSION.tar.gz -C /opt/yarn --strip-components=1 &&\
-    ln -s /opt/yarn/bin/yarn /usr/local/bin/yarn &&\
-    ln -s /opt/yarn/bin/yarn /usr/local/bin/yarnpkg &&\
-    rm yarn-v$YARN_VERSION.tar.gz &&\
-    \
-    echo "Cleaning up." &&\
-    apt-get purge -y --auto-remove xz-utils &&\
-    rm -rf /var/lib/apt/lists/* &&\
-    rm -rf /tmp/*
+    ln -s /usr/local/bin/node /usr/local/bin/nodejs
 
 ENV PATH $PATH:/home/wkoch/bin:/usr/local/bin
 ENV HOME /home/wkoch

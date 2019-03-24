@@ -15,4 +15,3 @@ RUN apt-get update && \
 # versions of local tools
 RUN node -v
 RUN npm -v
-RUN yarn -v

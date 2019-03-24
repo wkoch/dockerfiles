@@ -1,4 +1,4 @@
-FROM yarn
+FROM node
 
 RUN apt-get update &&\
     curl -sSL \

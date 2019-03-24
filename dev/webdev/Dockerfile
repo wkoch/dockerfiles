@@ -12,7 +12,6 @@ RUN echo "Updating system." &&\
     groupadd --gid 1000 wkoch &&\
     useradd --uid 1000 --gid wkoch \
     --shell /bin/bash -p '*' --create-home wkoch &&\
-    npm update -g &&\
     echo "Cleaning up." &&\
     rm -rf /var/lib/apt/lists/* &&\
     rm -rf /tmp/*
@@ -23,17 +22,8 @@ RUN echo "Installing NodeJS." &&\
     apt-get update -qqy &&\
     apt-get install -qqy nodejs &&\
     echo "Cleaning up." &&\
-    rm -rf /var/lib/apt/lists/* &&\
-    rm -rf /tmp/*
-
-# Yarn
-RUN echo "Installing Yarn." &&\
-    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - &&\
-    echo "deb https://dl.yarnpkg.com/debian/ stable main" \
-    > /etc/apt/sources.list.d/yarn.list && \
-    apt-get update -qqy &&\
-    apt-get install -qqy yarn &&\
-    echo "Cleaning up." &&\
+    npm update -g &&\
+    npm install -g pnpm &&\
     rm -rf /var/lib/apt/lists/* &&\
     rm -rf /tmp/*
 
@@ -77,7 +67,6 @@ RUN wget -O vscode-amd64.deb  https://go.microsoft.com/fwlink/?LinkID=760868 &&\
 # versions of local tools
 RUN node -v
 RUN npm -v
-RUN yarn -v
 RUN code -v
 
 CMD ["code, "--verbose"]
