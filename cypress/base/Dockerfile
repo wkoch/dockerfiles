@@ -10,7 +10,8 @@ RUN apt-get update && \
   libxss1 \
   libasound2 \
   xvfb && \
-  npm update -g
+  npm update -g && \
+  npm install -g cypress
 
 # versions of local tools
 RUN node -v
