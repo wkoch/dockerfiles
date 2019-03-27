@@ -10,7 +10,7 @@ ENV npm_config_loglevel warn
 ENV npm_config_unsafe_perm true
 
 RUN npm update -g && \
-  npm install -g cypress && \
+  npm install -g cypress
 
 # versions of local tools
 RUN node -v
