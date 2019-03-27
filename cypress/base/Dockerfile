@@ -11,7 +11,7 @@ RUN apt-get update && \
   libasound2 \
   xvfb && \
   npm update -g && \
-  npm install -g cypress
+  npm install -g cypress --unsafe-perm --silent
 
 # versions of local tools
 RUN node -v
