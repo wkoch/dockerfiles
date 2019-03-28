@@ -3,7 +3,7 @@ FROM debian:stretch-slim
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update &&\
-    apt-get upgrade -y &&\
+    apt-get upgrade -qqy &&\
     apt-get install -y --no-install-recommends \
     apt-transport-https \
     ca-certificates \

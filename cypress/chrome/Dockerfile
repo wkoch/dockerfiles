@@ -17,7 +17,7 @@ RUN \
     apt-get update -qqy && \
     apt-get install -qqy gauge && \
     rm -rf /var/lib/apt/lists/*
-    
+
 
 # "fake" dbus address to prevent errors
 # https://github.com/SeleniumHQ/docker-selenium/issues/87
