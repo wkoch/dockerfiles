@@ -9,9 +9,7 @@ ENV npm_config_loglevel warn
 # allow installing when the main user is root
 ENV npm_config_unsafe_perm true
 
-RUN npm update -g && \
-  npm install -g cypress && \
-  npm install -g @getgauge/cli
+RUN npm update -g
 
 # versions of local tools
 RUN node -v
