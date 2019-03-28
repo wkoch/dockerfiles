@@ -5,7 +5,7 @@ USER root
 RUN \
     apt-get update -qqy &&\
     apt-get upgrade -qqy &&\
-    apt-get install -qqy apt-transport-https gnupg2 ca-certificates &&\
+    apt-get install -qqy apt-transport-https gnupg2 ca-certificates libx11-6 &&\
     rm -rf /var/lib/apt/lists/* &&\
     rm -rf /tmp/*
 
