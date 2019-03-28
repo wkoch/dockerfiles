@@ -1,4 +1,4 @@
-FROM ubuntu:lastest
+FROM ubuntu:latest
 
 # Install Java.
 RUN apt-get update && apt-get install -q -y \
