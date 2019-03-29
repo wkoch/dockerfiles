@@ -5,10 +5,10 @@ RUN groupadd --gid 1000 node &&\
     useradd --uid 1000 --gid node --shell /bin/bash --create-home node
 
 # Install latest Node.js
-RUN apt-get update -qqy && apt-get install curl &&\
+RUN apt-get update -qqy && apt-get install -qqy curl &&\
     curl -sL https://deb.nodesource.com/setup_11.x | bash - &&\
-    apt-get update && apt-get install -y nodejs &&\
-    apt-get remove curl &&\
+    apt-get update -qqy && apt-get install -qqy nodejs &&\
+    apt-get remove -qqy curl &&\
     apt-get autoremove && apt-get clean &&\
     rm -rf /var/lib/apt/lists/* &&\
     rm -rf /tmp/*
