@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM node:11-slim
 
 # Install Java.
 RUN \
@@ -12,8 +12,7 @@ RUN \
     libgtk2.0-0 \
     libnotify-dev \
     libnss3 \
-    libxss1 \
-    openjdk-8-jdk &&\
+    libxss1 &&\
     rm -rf /var/lib/apt/lists/* &&\
     rm -rf /tmp/*
 
@@ -31,12 +30,11 @@ RUN \
     nodejs \
     gauge \
     yarn &&\
-    rm -rf /var/lib/apt/lists/* &&\
-    rm -rf /tmp/*
+    rm -rf /var/lib/apt/lists/*
 
 # Install gauge plugins
 RUN \
-    gauge install java &&\
     gauge install screenshot
+USER node
 
 ENV PATH=$HOME/.gauge:$PATH
