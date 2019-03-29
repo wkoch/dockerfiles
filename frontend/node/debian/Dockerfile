@@ -1,4 +1,4 @@
-FROM wkoch:debian
+FROM wkoch/debian
 
 # Add user
 RUN groupadd --gid 1000 node &&\

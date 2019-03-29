@@ -1,4 +1,4 @@
-FROM wkoch:alpine
+FROM wkoch/alpine
 
 # Add user
 RUN addgroup -g 1000 node &&\
