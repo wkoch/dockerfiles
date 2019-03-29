@@ -9,7 +9,6 @@ RUN apt-get update -qqy &&\
     apt-transport-https \
     ca-certificates \
     chromium \
-    curl \
     gnupg2 \
     libasound2 \
     libgconf-2-4 \
