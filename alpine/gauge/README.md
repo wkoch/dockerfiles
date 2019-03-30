@@ -1,6 +1,6 @@
 ## Using Gauge+Taiko for a Node.js app with Docker
 
-I'm using this image for testing in CircleCI.
+I'm using this image for testing with Gauge in Drone CI.
 
 Check project config at https://www.github.com/wkoch/ace
 
