@@ -6,7 +6,9 @@ RUN addgroup -g 1000 node &&\
 
 RUN apk add --no-cache nodejs-current npm &&\
     npm update -g &&\
-    npm cache clean -f
+    npm cache clean -f &&\
+    rm -rf /var/cache/* &&\
+    mkdir /var/cache/apk
 
 # Change user
 USER node
