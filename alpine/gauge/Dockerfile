@@ -11,7 +11,7 @@ ENV TAIKO_SKIP_CHROMIUM_DOWNLOAD=true
 ENV TAIKO_BROWSER_PATH=/usr/bin/chromium-browser
 
 # Change user
-# USER node
+USER node
 
 RUN node -v &&\
     npm -v
