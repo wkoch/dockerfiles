@@ -32,5 +32,3 @@ USER node
 
 RUN node -v &&\
     npm -v
-
-ENV PATH=$HOME/.gauge:$PATH
